@@ -1,0 +1,63 @@
+
+
+<ion-header>
+  <ion-navbar color="primary" >
+   
+      <button ion-button menuToggle style="margin-left:10px">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title style ="margin-left:80px">Home  (ub colombo 7) </ion-title>
+      <button ion-button round  (click)="logout()">logout</button>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content padding>
+      <ion-item>
+          <ion-label floating>Message</ion-label>
+          <ion-input  type="Address"   ></ion-input>
+        </ion-item>
+
+      <ion-item>
+          <ion-label>Lane</ion-label>
+          <ion-select    >
+            <ion-option value="Lane1">Lane 1</ion-option>
+            <ion-option value="Lane2">Lane 2</ion-option>
+            <ion-option value="Lane3">Lane 3</ion-option>
+            <ion-option value="Lane4">Lane 4</ion-option>
+            <ion-option value="Lane5">Lane 5</ion-option>
+            <ion-option value="Lane6">Lane 6</ion-option>
+          </ion-select>
+        </ion-item>
+
+   <button ion-button round full (click)="notify()" style="margin-top:25px">Send Notification</button>
+
+
+   <ion-list>
+    <ion-item-sliding >
+      <ion-item>
+        <ion-thumbnail item-start>
+          <!--ion-icon ios="iso-person" md="md-person"></ion-icon-->
+            <img src="../assets/imgs/user-512.png"/>
+        </ion-thumbnail>
+        <h2>{{noti.message}}</h2>
+          <p>{{noti.lane}}</p>
+          
+          
+          
+      </ion-item>
+        <ion-item-options side="right">
+          <button ion-button  color="danger">
+            <ion-icon ios="ios-trash" md="md-trash" name="text"></ion-icon>
+              delete
+          </button>
+          <button ion-button color="secondary">
+              <ion-icon name="call"></ion-icon>
+              call
+          </button>
+        </ion-item-options>
+    </ion-item-sliding>
+  
+  </ion-list>
+  </ion-content>
+
+

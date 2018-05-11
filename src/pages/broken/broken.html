@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar >
+   
+     
+      <ion-title style ="margin-left:80px">Broken Items Sale </ion-title>
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content padding>
+
+  <ion-searchbar (ionInput)="g"></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let person of persons" detail-push navPush="UpdatePage" [navParams]="{item: item}" >
+      
+    </ion-item>
+  </ion-list>
+
+
+
+                <ion-list>
+                    <ion-item-sliding *ngFor="let item of items "async json>
+                      <ion-item>
+                        <ion-thumbnail item-start>
+                          <!--ion-icon ios="iso-person" md="md-person"></ion-icon-->
+                            <img src="../assets/imgs/user-512.png"/>
+                        </ion-thumbnail>
+                        <h2>{{item.inmae}}</h2>
+                         
+                          <p>Negotiable :{{item.nego}}</p>
+                          <p>{{item.url}}</p>
+                          <h2>Price :Rs{{item.price}}</h2>
+                          
+                      </ion-item>
+                        <ion-item-options side="right">
+                            <button ion-button color="secondary">
+                            <ion-icon name="call" ></ion-icon>
+                                Call
+                            </button>
+                            <button ion-button color="secondary">
+                                <ion-icon name="offer" (click)="update()"></ion-icon>
+                                update
+                            </button>
+                            <button ion-button color="secondary">
+                              <ion-icon name="chat" (click)="popup()"></ion-icon>
+                              chat
+                          </button>
+                          
+                         
+                        </ion-item-options>
+                        
+                            
+                          
+                    </ion-item-sliding>
+
+                </ion-list>
+</ion-content>
+

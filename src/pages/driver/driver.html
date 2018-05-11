@@ -1,0 +1,73 @@
+
+<ion-header>
+
+    <ion-navbar color="primary" >
+     
+        <button ion-button menuToggle style="margin-left:10px">
+          <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title style ="margin-left:80px">Vehicle Drivers </ion-title>
+      </ion-navbar>
+
+</ion-header>
+
+
+
+
+<ion-content padding>
+
+  <ion-item>
+  <ion-label floating>driver Name</ion-label>
+  <ion-input [(ngModel)]="idriver.dname" ></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label floating>nic</ion-label>
+  <ion-input [(ngModel)]="idriver.nic"  ></ion-input>
+</ion-item>
+
+  <ion-item>
+            <ion-label floating>Date</ion-label>
+            <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="idriver.wdate" ></ion-datetime>
+          </ion-item>
+
+        <ion-item>
+            <ion-label floating>Start Time</ion-label>
+            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="idriver.stime"  ></ion-datetime>
+          </ion-item>
+
+{{driver | json}}
+<button ion-button full style="margin-top:25px"(click)="addDriver(idriver)">add</button>
+
+
+
+
+ <ion-list>
+  <ion-item-sliding *ngFor="let idriver of driverList$ | async">
+    <ion-item>
+      <ion-thumbnail item-start>
+        <!--ion-icon ios="iso-person" md="md-person"></ion-icon-->
+          <img src="../assets/imgs/user-512.png"/>
+      </ion-thumbnail>
+      <h2>{{idriver.dname}}</h2> 
+        <p>{{idriver.stime}}</p>
+        <p>{{idriver.nic}}</p>
+        <h2>{{idriver.wdate}}</h2>
+        
+        
+    </ion-item>
+      <ion-item-options side="right">
+        <button ion-button (click)="removeDriver(idriver)" color="danger">
+          <ion-icon ios="ios-trash" md="md-trash" name="text"></ion-icon>
+            delete
+        </button>
+        <button ion-button color="secondary">
+            <ion-icon name="call"></ion-icon>
+            call
+        </button>
+      </ion-item-options>
+  </ion-item-sliding>
+
+</ion-list>
+
+</ion-content>

@@ -1,0 +1,61 @@
+
+<ion-header>
+  <ion-navbar color="primary">
+      <button md-arrow-round-back></button>
+    <ion-title>Register
+  </ion-title>
+ </ion-navbar>
+</ion-header>
+
+
+
+<ion-content padding class="bg-image">
+ 
+    
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="text" [(ngModel)]="user.email"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+    </ion-item>
+   
+    <ion-item>
+      <ion-label floating>Address</ion-label>
+      <ion-input  type="Address" [(ngModel)]="user.address" ></ion-input>
+    </ion-item>
+  
+
+  
+    <ion-item>
+      <ion-label>Lane</ion-label>
+      <ion-select [(ngModel)]="user.lane"   >
+        <ion-option value="Lane1">Lane 1</ion-option>
+        <ion-option value="Lane2">Lane 2</ion-option>
+        <ion-option value="Lane3">Lane 3</ion-option>
+        <ion-option value="Lane4">Lane 4</ion-option>
+        <ion-option value="Lane5">Lane 5</ion-option>
+        <ion-option value="Lane6">Lane 6</ion-option>
+      </ion-select>
+    </ion-item>
+  
+  
+    <ion-item>
+      <ion-label floating>Contct Number</ion-label>
+      <ion-input  type="number" [(ngModel)]="user.number"  ></ion-input>
+    </ion-item>
+  
+  </ion-list>
+
+
+
+  <button ion-button round full style="margin-top:25px" (click)="register(user)">Register</button>
+
+
+</ion-content>
+

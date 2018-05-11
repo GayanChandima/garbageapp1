@@ -1,0 +1,41 @@
+
+<ion-header>
+    
+      <ion-navbar>
+        <ion-title>Add items</ion-title>
+        
+      </ion-navbar>
+    
+    </ion-header>
+    
+    
+    <ion-content padding class="bgg">
+        <ion-list>
+    
+            <ion-item>
+              <ion-label floating>Itemname</ion-label>
+              <ion-input type="text" [(ngModel)]="iname" ></ion-input>
+            </ion-item>
+          
+            <ion-item>
+              <ion-label floating>price</ion-label>
+              <ion-input type="text" [(ngModel)]="price"  ></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label floating>negotiage</ion-label>
+                <ion-input type="text" [(ngModel)]="nego"  ></ion-input>
+              </ion-item>
+
+              <ion-item>
+                  <ion-label floating>Condition</ion-label>
+                  <ion-input type="text" [(ngModel)]="url"  ></ion-input>
+                </ion-item>
+           
+            
+          </ion-list>
+          <button ion-button round full style="margin-top:25px"(click)="createitem(iname,price,nego,url)">Add</button>
+          <button ion-button round full style="margin-top:25px"(click)="viewb()">My Items</button>
+     
+        </ion-content>
+    
